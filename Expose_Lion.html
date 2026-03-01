@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exposé sur le Lion</title>
+
+<style>
+:root{
+  --bg1:#0f172a;
+  --bg2:#1e293b;
+  --card: rgba(255,255,255,.06);
+  --border: rgba(255,255,255,.14);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.75);
+  --accent:#f59e0b;
+  --radius:18px;
+  --max:1100px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(245,158,11,.18), transparent 60%),
+    linear-gradient(180deg,var(--bg2),var(--bg1));
+}
+
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(15,23,42,.8);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.wrap{max-width:var(--max);margin:auto;padding:14px 16px;}
+.topbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.pill{
+  font-size:12px;font-weight:800;
+  padding:6px 10px;border-radius:999px;
+  background:rgba(255,255,255,.08);
+}
+nav{display:flex;gap:10px;flex-wrap:wrap}
+nav a{
+  text-decoration:none;color:var(--muted);
+  font-weight:800;font-size:14px;
+  padding:8px 12px;border-radius:14px;
+}
+nav a.active{background:rgba(245,158,11,.3);color:white}
+
+.hero{max-width:var(--max);margin:auto;padding:24px 16px 10px}
+h1{margin:0;font-size:36px}
+.subtitle{color:var(--muted)}
+
+main{max-width:var(--max);margin:auto;padding:10px 16px 60px}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;
+}
+
+.page{display:none}
+.page.active{display:block}
+
+h2{margin-top:0}
+p,li{color:var(--muted);line-height:1.6}
+ul{margin-left:20px}
+
+.annot-figure{
+  margin:14px 0;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+}
+.annot-figure img{width:100%;display:block}
+
+.mini{
+  padding:14px;border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.15);
+  margin-top:15px;
+}
+
+button{
+  padding:8px 12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.08);
+  color:white;font-weight:800;
+  cursor:pointer;margin:5px 4px 0 0;
+}
+.btnAccent{background:rgba(245,158,11,.35)}
+
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+@media(max-width:900px){
+  .grid2{grid-template-columns:1fr}
+}
+
+/* PRINT */
+@media print{
+  body{background:white !important;color:black !important}
+  header,nav,footer,button{display:none !important}
+  .page{display:none !important}
+  body.print-presentation #presentation,
+  body.print-habitat #habitat,
+  body.print-alimentation #alimentation{
+    display:block !important;
+  }
+  .card{background:white !important;border:none !important}
+  h1,h2,h3,p,li{color:black !important}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="wrap">
+<div class="topbar">
+<span class="pill">Classe CP-CE2 — Tom Fürst</span>
+<nav>
+<a href="#" data-page="presentation" class="active">Présentation</a>
+<a href="#" data-page="habitat">Habitat</a>
+<a href="#" data-page="alimentation">Alimentation</a>
+<a href="#" data-page="quiz">Quiz</a>
+</nav>
+</div>
+</div>
+</header>
+
+<div class="hero">
+<h1>Exposé sur le Lion 🦁</h1>
+<p class="subtitle">Découvrons ensemble le roi de la savane !</p>
+</div>
+
+<main>
+
+<!-- PRESENTATION -->
+<section id="presentation" class="page active">
+<div class="card">
+<h2>🦁 Qui est le lion ?</h2>
+<button class="btnAccent" onclick="printPage('presentation')">🖨️ Imprimer</button>
+
+<figure class="annot-figure">
+<img src="Lion descriptif.png">
+</figure>
+
+<p>Le lion est l’un des plus grands félins du monde. On l’appelle souvent <b>le roi des animaux</b> à cause de sa force et de sa crinière impressionnante.</p>
+
+<div class="mini">
+<h3>🐾 Faits impressionnants</h3>
+<ul>
+<li>Il peut peser jusqu’à <b>250 kilos</b>.</li>
+<li>Il peut courir jusqu’à <b>60 km/h</b>.</li>
+<li>Il vit en groupe appelé une <b>troupe</b>.</li>
+<div class="mini">
+  <h3>🤝 Les liens sociaux dans une troupe</h3>
+
+  <p>
+    Les lions sont les seuls grands félins à vivre en groupe.
+    Une troupe compte en général <b>10 à 20 individus</b>.
+  </p>
+
+  <ul>
+    <li>👑 <b>1 ou 2 mâles adultes maximum</b></li>
+    <li>🦁 Plusieurs lionnes (souvent de la même famille)</li>
+    <li>🐾 Des lionceaux de différents âges</li>
+  </ul>
+
+  <h4 style="margin-top:10px;">🧠 Pourquoi pas beaucoup de mâles ?</h4>
+  <p>
+    Les mâles adultes se battent souvent entre eux pour diriger la troupe.
+    S’il y a trop de mâles, il y a trop de conflits.
+    C’est pourquoi on trouve généralement seulement <b>un ou deux mâles dominants</b>.
+  </p>
+
+  <h4 style="margin-top:10px;">🎯 Le rôle de chacun</h4>
+  <ul>
+    <li>👑 <b>Les mâles :</b> protègent le territoire et la troupe contre les intrus.</li>
+    <li>🦁 <b>Les lionnes :</b> chassent ensemble et élèvent les petits.</li>
+    <li>🐾 <b>Les lionceaux :</b> jouent pour apprendre à chasser et à survivre.</li>
+  </ul>
+
+  <p style="margin-top:8px;">
+    Les lions se reconnaissent, se toilettent entre eux et dorment souvent collés.
+    Cela renforce leurs <b>liens sociaux</b> et leur permet de survivre plus facilement.
+  </p>
+</div>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- HABITAT -->
+<section id="habitat" class="page">
+<div class="card">
+<h2>🌍 Où vit le lion ?</h2>
+<button class="btnAccent" onclick="printPage('habitat')">🖨️ Imprimer</button>
+
+<p>Le lion vit principalement en <b>Afrique</b>, dans un milieu appelé <b>la savane</b>.</p>
+
+<figure class="annot-figure">
+<img src="Territoire des lions en afrique.png">
+</figure>
+
+<div class="mini">
+<h3>🗺️ Que montre la carte ?</h3>
+<p>Les zones vertes montrent les endroits où les lions vivent aujourd’hui :</p>
+<ul>
+<li>🌍 Afrique de l’Ouest</li>
+<li>🌍 Afrique centrale</li>
+<li>🌍 Afrique australe</li>
+</ul>
+</div>
+
+<div class="mini">
+<h3>🌿 Son milieu de vie</h3>
+<ul>
+<li>Grandes plaines avec de l’herbe haute</li>
+<li>Quelques arbres pour l’ombre</li>
+<li>Des points d’eau pour boire</li>
+<li>Beaucoup d’animaux à chasser</li>
+</ul>
+<p>Le lion a besoin d’un territoire vaste pour trouver assez de nourriture.</p>
+</div>
+
+<div class="mini">
+<h3>🌡️ Le climat</h3>
+<p>La savane est chaude. Il peut faire plus de 40°C !  
+Les lions se reposent souvent la journée et chassent le soir.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ALIMENTATION -->
+<section id="alimentation" class="page">
+<div class="card">
+<h2>🍖 Que mange le lion ?</h2>
+<button class="btnAccent" onclick="printPage('alimentation')">🖨️ Imprimer</button>
+
+<div class="mini">
+<h3>🥩 Un carnivore puissant</h3>
+<p>Le lion mange uniquement de la viande.  
+Il a besoin de beaucoup d’énergie pour survivre.</p>
+</div>
+
+<div class="mini">
+<h3>🦓 Ses proies préférées</h3>
+<ul>
+<li>Zèbres</li>
+<li>Antilopes</li>
+<li>Buffles</li>
+<li>Gazelles</li>
+</ul>
+</div>
+
+<div class="mini">
+<h3>👩‍👧 Comment il chasse ?</h3>
+<p>Ce sont surtout les lionnes qui chassent ensemble.  
+Elles s’approchent doucement puis courent très vite.</p>
+<p>Un lion peut manger jusqu’à <b>7 kilos de viande en un seul repas !</b></p>
+</div>
+
+<div class="mini">
+<h3>⚡ Ses besoins pour survivre</h3>
+<ul>
+<li>Beaucoup de protéines (viande)</li>
+<li>De l’eau régulièrement</li>
+<li>Du repos (jusqu’à 20 heures par jour)</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="page">
+<div class="card">
+<h2>🧠 Quiz final</h2>
+
+<div class="mini">
+<p><b>1️⃣ Vitesse maximale ?</b></p>
+<button onclick="checkAnswer(this,false)">30 km/h</button>
+<button onclick="checkAnswer(this,true)">60 km/h</button>
+</div>
+
+<div class="mini">
+<p><b>2️⃣ Où vit-il ?</b></p>
+<button onclick="checkAnswer(this,true)">Dans la savane africaine</button>
+<button onclick="checkAnswer(this,false)">Dans la jungle amazonienne</button>
+</div>
+
+<div class="mini">
+<p><b>3️⃣ Que mange-t-il ?</b></p>
+<button onclick="checkAnswer(this,true)">De la viande</button>
+<button onclick="checkAnswer(this,false)">Des plantes</button>
+</div>
+
+<h3 id="scoreDisplay"></h3>
+<button class="btnAccent" onclick="showScore()">Voir score</button>
+<button onclick="resetQuiz()">Rejouer</button>
+
+</div>
+</section>
+
+</main>
+
+<script>
+// NAVIGATION
+const links=[...document.querySelectorAll('nav a')]
+const pages=[...document.querySelectorAll('.page')]
+
+function setActive(id){
+  pages.forEach(p=>p.classList.toggle('active',p.id===id))
+  links.forEach(l=>l.classList.toggle('active',l.dataset.page===id))
+}
+links.forEach(l=>{
+  l.addEventListener('click',e=>{
+    e.preventDefault()
+    setActive(l.dataset.page)
+  })
+})
+
+// PRINT
+function printPage(id){
+  setActive(id)
+  document.body.classList.remove('print-presentation','print-habitat','print-alimentation')
+  document.body.classList.add('print-'+id)
+  setTimeout(()=>window.print(),200)
+}
+window.addEventListener('afterprint',()=>{
+  document.body.classList.remove('print-presentation','print-habitat','print-alimentation')
+})
+
+// QUIZ
+let score=0,answered=0,total=3
+function checkAnswer(btn,correct){
+  if(btn.parentElement.dataset.locked==="1")return
+  btn.parentElement.dataset.locked="1"
+  btn.parentElement.querySelectorAll("button").forEach(b=>b.disabled=true)
+  if(correct){btn.style.background="#22c55e";score++}
+  else{btn.style.background="#ef4444"}
+  answered++
+}
+function showScore(){
+  if(answered<total){scoreDisplay.textContent="Réponds aux 3 questions 🙂";return}
+  scoreDisplay.textContent="Score : "+score+" / "+total
+}
+function resetQuiz(){
+  score=0;answered=0;scoreDisplay.textContent=""
+  document.querySelectorAll("#quiz .mini").forEach(m=>{
+    m.dataset.locked="0"
+    m.querySelectorAll("button").forEach(b=>{
+      b.disabled=false;b.style.background=""
+    })
+  })
+}
+</script>
+
+</body>
+</html>
